@@ -1,0 +1,55 @@
+Modelo de negocio (Recepción de la mercancia)
+---------------------------------------------
+
+o Una empresa de paqueteria poseen un metodo bastante rudimentario para la clasificacion de los paquetes en las zonas correspondientes.
+  Cada mañama se van depositando en una unica cinta transportadora todos los paquetes, no en cualquier posicion, la etiqueta debe ubicarse en la parte superior,
+  para que la pistola pueda leerla y de esta forma se informa al sistema que el paquete ya esta recepcionado.Los operarios se encargan de vaciar la cinta
+  colocando los paquetes en sus ubicaciones claramente detalladas dentro de la nave. 
+
+Problemas Actuales
+------------------
+o Exceso de paquetes en la cinta.
+	*Para parar la cinta es necesario dar voces para que la persona más cercana al boton de parada lo presione, logicamente
+  	 luego hay que volver presionar el boton de arranque.
+	*Todos los paquetes se van presionado uno sobre otros, esto ocasiona desperfectos (costes) en la paqueteria.Además existen caidas de la cinta 
+	 requiere de esfuerzo adicional para enrutar el paquete.
+o Clasificando los paquetes
+	*Bastante esfuerzo clasificando los paquetes.
+	*Paquetes van a parar a otras zonas, logicamente muy diferentes a su destino final.
+	*Riñas entre operario por la clasificacion de la mercancia.
+
+o Clasificacion por zonas (A....Z)
+	*Personal destinano a "x" zonas, evitando asi extensos recorridos.
+
+Mejoras
+-------
+o Detectar que la cinta esta llena.Adicionalmete se desea agregar un metodo diferentes al pulsador para arrancar/parar la cinta.
+o Dejar un espacio aun por detallar entre un paquete y el siguiente.Puede eliminarse segun el tipo de mercancia.
+o Clasificacion automatica de los paquetes, es decir, segun la descripcion de la etiqueta enrutar el paquete por la cinta correspondiente.
+o Segun lectura artificial, ordenar al piston "x" que expulse al paquete por la cinta correspondiente (zonas)
+
+Trabajo Laboratorio de la instrumentación
+-----------------------------------------
+
+Aunque esto no forma parte de la asignatura creemos que para dar más realismo vamos a simular la cinta mediante banda entrelazada a un par de servomotores.
+
+En la medido de lo posible nos gustaria llegar a la clasificacion de los paquetes, dado que es necesario técnicas de visión artificial, hemos
+propuesto realizar una clasificacion según su altura.Y el enrutamiento como el envio de texto a una LCD.
+
+En cuanto al arranque y parado de la cinta, en el caso de la parada de emergencia por parte del operario vamos a emplear un sensor de contancto , 
+de tal manera que al rozar el sensor se para o arranque la cinta. Para detectar un exceso de paquetes dentro de la cinta vamos a emplear un sensor 
+de proximidad para su parada, ubicado a una distancia estrategica del final de la cinta.El correcto funcionamiento de la cinta puede expresarse 
+a traves de un led : verde cinta corriento (producciendo) y rojo cinta parada ( error del sistema) 
+
+En cuanto a dejar espacios de separacion entre paquetes,para esta iteracion vamos a contentarnos con detectar que la distancia no es la suficiente 
+y alertar del error atraves de la LCD,durante un tiempo aun por determinar tiendo más prioridad el texto de enrutamiento.
+
+
+
+Lista de sensores ( a muy alto nivel )
+-----------------
+Sensor encargado de detectar la altura.
+Sensor de proximidad para parar/arrancar la cinta.
+Sensor encargado de detectar la posicion para comprobar que se respenta la distancia entre cajas. 
+sensor dentro/fuera piston. (supongo que ya estara incluido en las pistones jjjjj)
+ 
